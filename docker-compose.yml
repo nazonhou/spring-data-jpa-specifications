@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: postgres:16.2-alpine
+    restart: no
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - ${POSTGRES_PORT:-5432}:5432
